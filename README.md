@@ -1,150 +1,94 @@
-🛸 UFO Shape Predictor
+🛸 UFO Shape Predictor (Replit Edition)
 
-An end-to-end MLOps project that predicts the most likely UFO shape from user-submitted sighting details. Built with XGBoost, FastAPI, and a modern HTML/Streamlit frontend.
+Predict UFO shapes from sighting details with a trained ML model.
+Built with FastAPI, XGBoost, and a modern dark/grey HTML frontend.
 
-✨ Features
+🚀 Try it on Replit
 
-🔄 Data Pipeline: cleans raw UFO sightings dataset, extracts features (text length, time, location).
+Click Run ▶️ in Replit.
 
-🤖 Model Training: XGBoost classifier trained to predict UFO shapes.
+Wait until the server starts (uvicorn running on 0.0.0.0:8000).
 
-🏷️ Label Encoding: converts UFO shape labels into numeric classes for training.
+Open the Webview or the public Replit link.
 
-⚡ API Service: FastAPI backend with both HTML form and JSON API.
+You’ll see a form like this:
 
-🖥️ Dashboards:
+📝 Enter description of the sighting
 
-HTML frontend (modern grey UI, styled with CSS).
+⏱ Duration in seconds
 
-Streamlit dashboard for interactive exploration.
+🌍 Country code (us, ca, gb…)
 
-🎨 Custom UI: styled dark/grey theme, with a neon green accent and a UFO favicon.
+📅 Year, Month
 
-✅ Testing: basic API tests with pytest.
+⏰ Hour of day
 
-📂 Project Structure
-ufo-mlops-project/
-│
-├── src/ufo_mlops/
-│   ├── models/
-│   │   ├── train.py          # Train XGBoost model
-│   │   ├── predict.py        # Local prediction script
-│   ├── data/                 # Data pipeline code
-│   └── ...
-│
-├── api/
-│   └── main.py               # FastAPI app (HTML + JSON API)
-│
-├── dashboards/
-│   └── app.py                # Streamlit dashboard
-│
-├── templates/
-│   └── index.html            # HTML frontend
-│
-├── static/
-│   ├── style.css             # Modern grey UI styles
-│   └── favicon.ico           # UFO favicon
-│
-├── models/
-│   ├── ufo_model.pkl         # Trained XGBoost model
-│   └── label_encoder.pkl     # Label encoder for UFO shapes
-│
-├── requirements.txt
-└── README.md
+Click Predict → the app will return the most likely UFO shape and a confidence score.
 
-⚙️ Setup
-1. Clone repo & install dependencies
-git clone https://github.com/yourname/ufo-mlops-project.git
-cd ufo-mlops-project
-pip install -r requirements.txt
+📂 Files in this Replit
 
-2. Train the model
-python src/ufo_mlops/models/train.py --config config/config.yaml
+api/main.py → FastAPI app
 
+templates/index.html → HTML UI
 
-This creates:
+static/style.css → Styling (modern grey theme)
 
-models/ufo_model.pkl
+static/favicon.ico → UFO favicon
 
-models/label_encoder.pkl
+models/ufo_model.pkl → Trained XGBoost model
 
-3. Run FastAPI backend
-uvicorn api.main:app --reload
+models/label_encoder.pkl → Label encoder for UFO shapes
+
+requirements.txt → Python dependencies
+
+⚙️ How it Works
+
+FastAPI serves an HTML form at /
+
+Model + encoder are loaded from models/
+
+User input is converted into features
+
+XGBoost model predicts UFO shape → decoded into a string
+
+Result displayed directly in the web app
+
+🛠️ Requirements
+
+Already in requirements.txt:
+
+fastapi
+uvicorn
+pandas
+scikit-learn
+xgboost
+joblib
+jinja2
 
 
-App runs at: http://127.0.0.1:8000
+Replit installs these automatically.
 
-Swagger docs: http://127.0.0.1:8000/docs
-
-4. Run Streamlit dashboard (optional)
-streamlit run dashboards/app.py
-
-
-Runs at: http://localhost:8501
-
-🎨 UI Preview
-
-Modern grey/dark theme with neon green accent.
-
-Centered form + prediction box with consistent width.
-
-Custom UFO favicon in browser tab.
-
-🚀 Deployment
-
-Works locally with FastAPI + Streamlit.
-
-Can be imported into Replit (FastAPI recommended).
-
-Docker/Compose setup possible for cloud deployment.
-
-📊 Example Prediction
+📊 Example
 
 Input:
 
-{
-  "comments": "Bright lights hovering silently in the night sky",
-  "duration_seconds": 120,
-  "country": "us",
-  "year": 2022,
-  "month": 7,
-  "hour": 22,
-  "desc_length": 42
-}
+Comments: “Bright lights hovering silently”
 
+Duration: 120
+
+Country: us
+
+Year: 2023
+
+Month: 7
+
+Hour: 22
 
 Output:
 
-{
-  "predicted_shape": "light",
-  "confidence": 0.81
-}
-
-🛠️ Tech Stack
-
-Python 3.10+
-
-FastAPI + Jinja2 templates
-
-Streamlit
-
-scikit-learn, XGBoost, pandas
-
-Joblib for model persistence
-
-pytest for testing
-
-🚧 Future Improvements
-
-Hyperparameter tuning (GridSearch / Optuna).
-
-Experiment tracking with MLflow/DVC.
-
-CI/CD with GitHub Actions.
-
-Deployment to cloud (Render, Railway, or Docker Compose).
+Prediction: light
+Confidence: 0.81
 
 👽 About
 
-This project is part of my MLOps learning journey.
-It combines data science, production deployment, and frontend styling into a complete end-to-end ML application.
+This project is part of an MLOps learning journey — data science meets deployment, now running fully online on Replit 🚀

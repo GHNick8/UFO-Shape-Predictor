@@ -1,17 +1,7 @@
-pandas
-numpy
-scikit-learn
 fastapi
 uvicorn
-streamlit
-pyyaml
-
-# testing
-pytest
-httpx
-
-# HTML
-python-multipart
-
-# stronger performance
+pandas
+scikit-learn
 xgboost
+joblib
+jinja2
