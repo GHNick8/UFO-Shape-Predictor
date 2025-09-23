@@ -1,0 +1,68 @@
+# ---------------------------------
+# Python
+# ---------------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+.eggs/
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+*.env
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Byte-compiled / cache
+*.pickle
+*.pkl
+*.joblib
+
+# Build / packaging
+build/
+dist/
+*.spec
+
+# ---------------------------------
+# Data Science / MLOps
+# ---------------------------------
+# Raw and intermediate data (keep processed if needed)
+data/raw/
+data/interim/
+# Uncomment below if you don’t want processed in repo
+# data/processed/
+
+# Models
+models/
+*.h5
+*.pt
+*.onnx
+
+# Experiment tracking (MLflow, DVC, etc.)
+mlruns/
+.dvc/
+.dagshub/
+
+# ---------------------------------
+# IDE / OS
+# ---------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---------------------------------
+# Others
+# ---------------------------------
+.envrc
+config/config.yaml  # if it contains secrets

@@ -1,0 +1,8 @@
+columns:
+  datetime: datetime64[ns]
+  city: str
+  state: str
+  country: str
+  shape: str
+  duration (seconds): float
+  comments: str
