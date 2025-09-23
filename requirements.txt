@@ -5,3 +5,13 @@ fastapi
 uvicorn
 streamlit
 pyyaml
+
+# testing
+pytest
+httpx
+
+# HTML
+python-multipart
+
+# stronger performance
+xgboost

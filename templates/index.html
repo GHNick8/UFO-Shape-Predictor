@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UFO Shape Predictor</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>UFO Shape Predictor</h1>
+        <p class="info-text">
+            Enter details about a UFO sighting below.  
+            Describe what you saw, how long it lasted, and when/where it happened.  
+            Our model will predict the most likely UFO shape based on your input.
+        </p>
+        <form action="/predict" method="post">
+            <label for="comments">Description:</label>
+            <textarea name="comments" rows="3">{{ request.form.comments if request.form else "" }}</textarea>
+
+            <label for="duration_seconds">Duration (seconds):</label>
+            <input type="number" name="duration_seconds" value="60">
+
+            <label for="country">Country code:</label>
+            <input type="text" name="country" value="be">
+
+            <label for="year">Year:</label>
+            <input type="number" name="year" value="2025">
+
+            <label for="month">Month:</label>
+            <input type="number" name="month" value="7">
+
+            <label for="hour">Hour:</label>
+            <input type="number" name="hour" value="21">
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if predicted_shape %}
+        <div class="result">
+            <p><strong>Prediction:</strong> {{ predicted_shape }}</p>
+            <p><strong>Confidence:</strong> <span class="confidence">{{ "%.2f"|format(confidence) }}%</span></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
