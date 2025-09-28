@@ -71,3 +71,6 @@ Replit installs these automatically.
 ## About
 
 This project is part of an MLOps learning journey — data science meets deployment, now running fully online on Replit 🚀
+
+## 📜 License
+MIT License — free to use and adapt.
