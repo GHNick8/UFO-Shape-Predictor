@@ -68,22 +68,6 @@ jinja2
 
 Replit installs these automatically.
 
-## Example
-
-Input:
-
-Comments: “Bright lights hovering silently”
-
-Duration: 120
-
-Country: us
-
-Year: 2023
-
-Month: 7
-
-Hour: 22
-
 ## About
 
 This project is part of an MLOps learning journey — data science meets deployment, now running fully online on Replit 🚀
