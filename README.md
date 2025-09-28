@@ -1,9 +1,9 @@
-🛸 UFO Shape Predictor (Replit Edition)
+# UFO Shape Predictor (Replit Edition)
 
 Predict UFO shapes from sighting details with a trained ML model.
 Built with FastAPI, XGBoost, and a modern dark/grey HTML frontend.
 
-🚀 Try it on Replit
+## Try it on Replit
 
 Click Run ▶️ in Replit.
 
@@ -25,7 +25,7 @@ You’ll see a form like this:
 
 Click Predict → the app will return the most likely UFO shape and a confidence score.
 
-📂 Files in this Replit
+## Files in this Replit
 
 api/main.py → FastAPI app
 
@@ -41,7 +41,7 @@ models/label_encoder.pkl → Label encoder for UFO shapes
 
 requirements.txt → Python dependencies
 
-⚙️ How it Works
+## How it Works
 
 FastAPI serves an HTML form at /
 
@@ -53,7 +53,7 @@ XGBoost model predicts UFO shape → decoded into a string
 
 Result displayed directly in the web app
 
-🛠️ Requirements
+## Requirements
 
 Already in requirements.txt:
 
@@ -68,7 +68,7 @@ jinja2
 
 Replit installs these automatically.
 
-📊 Example
+## Example
 
 Input:
 
@@ -84,11 +84,6 @@ Month: 7
 
 Hour: 22
 
-Output:
-
-Prediction: light
-Confidence: 0.81
-
-👽 About
+## About
 
 This project is part of an MLOps learning journey — data science meets deployment, now running fully online on Replit 🚀
